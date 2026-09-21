@@ -6,6 +6,7 @@ namespace MUD.Player
 {
     class Player
     {
+        private int playerLevel;
         private int playerHealth;
         private int playerStrength;
         private int playerDamage;
@@ -14,16 +15,17 @@ namespace MUD.Player
         private string? playerName;
         private bool alive;
 
-        //public Player PlayerConstructor(string name)
-        //{
-        //    playerHealth = 100;
-        //    playerStrength = 10;
-        //    playerDamage = 5;
-        //    playerArmorRating = 5;
-        //    playerGold = 0;
-        //    playerName = name;
-        //    alive = true;
-        //}
+        public Player(string name)
+        {
+            playerLevel = 1;
+            playerHealth = 100;
+            playerStrength = 10;
+            playerDamage = 5;
+            playerArmorRating = 5;
+            playerGold = 0;
+            playerName = name;
+            alive = true;
+        }
 
     }
 }
