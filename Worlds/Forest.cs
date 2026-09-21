@@ -15,6 +15,8 @@ namespace MUD.Worlds
             int slimeDamage = forestSlime.damage;
             int i = 0;
 
+        Here:
+            //if slime dead do something else and return player with loot and gold..
             Console.WriteLine();
             Console.WriteLine($"You encounter a level {forestSlime.level} Forest Slime!");
             Console.WriteLine($"  (o_o)                        Slime health: {forestSlime.health}/{slimeHealthMax}");
@@ -26,15 +28,16 @@ namespace MUD.Worlds
 
             switch (i) 
             {
-                case 1: //attack
-                    break;
+                case 1: player.PlayerAttack(player, forestSlime);
+                        forestSlime.EnemyAttack(forestSlime, player);
+                    goto Here;
                 case 2: //flee
                     break;
             }
             return player;
         }
 
-        public Enemies.Enemy CreateForestSlime(Player.Player player)
+        private Enemies.Enemy CreateForestSlime(Player.Player player)
         {
             var loot = new List<Enemies.Loot>
             {

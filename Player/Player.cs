@@ -73,5 +73,11 @@ namespace MUD.Player
             Console.WriteLine("└" + new string('─', totalWidth - 2) + "┘");
         }
 
+        public Enemy PlayerAttack(Player player, Enemy enemy)
+        {
+            //reduce enemy healt, cw how much damage the player does to the enemy
+            return enemy;
+        }
+
     }
 }

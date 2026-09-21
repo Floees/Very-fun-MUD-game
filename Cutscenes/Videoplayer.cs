@@ -41,7 +41,7 @@ namespace MUD.Cutscenes
             //    Fill()        — stretch to use the entire window area
             //    WithOverlay() — bottom status bar appears on key/click, hides after 3s
             //    WithLooping() — restart from the beginning when the video ends
-            var videoControl = Controls.Video(@"C:\Users\Aperm\Downloads\nackademin-MUD-main\nackademin-MUD-main\MUD\Cutscenes\videos\truck.mp4") //ex @"C:\Users\Aperm\Downloads\truck.mp4"
+            var videoControl = Controls.Video(@"..\..\..\Cutscenes\videos\truck.mp4")
                 .Fill()
                 .WithOverlay()
                 //.WithLooping()

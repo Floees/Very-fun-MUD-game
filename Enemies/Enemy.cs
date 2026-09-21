@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MUD.Enemies
 {
-    public class Enemy
+    class Enemy
     {
         public string? name;
         public int level;
@@ -19,6 +19,12 @@ namespace MUD.Enemies
             this.health = health;
             this.damage = damage;
             this.loot = loot;
+        }
+
+        public Player.Player EnemyAttack(Enemy enemy, Player.Player player)
+        {
+            //reduce player hp and cw amount.
+            return player;
         }
     }
 }
