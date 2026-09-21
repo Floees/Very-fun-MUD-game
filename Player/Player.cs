@@ -7,16 +7,16 @@ namespace MUD.Player
 {
     class Player
     {
-        private int playerLevel;
-        private int playerHealth;
+        public int playerLevel;
+        public int playerHealth;
         private int playerHealthMax;
-        private int playerStrength;
-        private int playerDamage;
-        private int playerArmorRating;
-        private int playerGold;
+        public int playerStrength;
+        public int playerDamage;
+        public int playerArmorRating;
+        public int playerGold;
         private string? playerName;
-        private bool alive;
-        private List<Loot> playerLoot;
+        public bool alive;
+        public List<Loot> playerLoot;
 
         public Player(string name)
         {

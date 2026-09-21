@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MUD.Enemies
 {
-    public class Enemies
+    public class Enemy
     {
         public string? name;
         public int level;
@@ -12,7 +12,7 @@ namespace MUD.Enemies
         public int damage;
         public List<Loot> loot;
 
-        public Enemies(string name, int level, int health, int damage, List<Loot> loot)
+        public Enemy(string name, int level, int health, int damage, List<Loot> loot)
         {
             this.name = name;
             this.level = level;
