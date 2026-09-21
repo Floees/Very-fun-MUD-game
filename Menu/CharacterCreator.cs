@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MUD.Worlds;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -40,7 +41,8 @@ namespace MUD.Menu
             Console.ForegroundColor = ConsoleColor.White;
             Console.ReadKey();
 
-            //Go to hub world
+            Console.Clear();
+            HubWorld.HubWorldMenu(player);
 
         }
 
