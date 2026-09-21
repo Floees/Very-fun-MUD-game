@@ -5,7 +5,7 @@ namespace MUD
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             ////WriteLine writes to the console
             //Console.WriteLine("Welcome the magical worlds of MUDs");
@@ -30,7 +30,7 @@ namespace MUD
             ////to make it different from doubles (5.5)
             //float playerSpeed = 1.5f;
 
-            StartMenu.Menu();
+            await StartMenu.Menu();
         }
     }
 }

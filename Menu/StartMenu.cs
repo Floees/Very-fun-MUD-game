@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AngleSharp.Io;
+using MUD.Cutscenes;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +8,7 @@ namespace MUD.Menu
 {
     internal class StartMenu
     {
-        public static void Menu() 
+        public static async Task Menu() 
         {
             List<string> menuOptions = new List<string>();
 
@@ -20,8 +22,9 @@ namespace MUD.Menu
             switch (i) 
             {
                 case 0:
-                    //Character Creator
-                        break;
+                    await Videoplayer.PlayVideo();
+                    CharacterCreator.StartCharacterCreator();
+                    break;
                 case 1:
                     Console.WriteLine("\nW.I.P coming in update 4.0.9");
                     Thread.Sleep(1000);
