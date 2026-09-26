@@ -15,9 +15,8 @@ namespace MUD.Cutscenes
 {
     internal class Videoplayer
     {
-        public async static Task PlayVideo()
+        public async static Task PlayVideo(string videoPath)
         {
-
             // 1. Create the window system
             var windowSystem = new ConsoleWindowSystem(
                 RenderMode.Buffer,
@@ -41,7 +40,7 @@ namespace MUD.Cutscenes
             //    Fill()        — stretch to use the entire window area
             //    WithOverlay() — bottom status bar appears on key/click, hides after 3s
             //    WithLooping() — restart from the beginning when the video ends
-            var videoControl = Controls.Video(@"..\..\..\Cutscenes\videos\truck.mp4")
+            var videoControl = Controls.Video(videoPath)
                 .Fill()
                 .WithOverlay()
                 //.WithLooping()

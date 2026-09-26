@@ -22,7 +22,7 @@ namespace MUD.Menu
             switch (i) 
             {
                 case 0:
-                    await Videoplayer.PlayVideo();
+                    await Videoplayer.PlayVideo(@"..\..\..\Cutscenes\videos\truck.mp4");
                     CharacterCreator.StartCharacterCreator();
                     break;
                 case 1:
