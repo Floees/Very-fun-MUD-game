@@ -22,6 +22,35 @@ namespace MUD.Menu
             switch (i) 
             {
                 case 0:
+                    //await Videoplayer.PlayVideo(@"..\..\..\Cutscenes\videos\truck.mp4");
+                    CharacterCreator.StartCharacterCreator();
+                    break;
+                case 1:
+                    Console.WriteLine("\nW.I.P coming in update 4.0.9");
+                    Thread.Sleep(1500);
+                    Console.Clear();
+                    goto here;
+                case 2:
+                    break;
+            }
+
+        }
+
+        public static async Task Menu(string a)
+        {
+            await Videoplayer.PlayVideo(@"..\..\..\Cutscenes\videos\Youdied.mp4");
+            List<string> menuOptions = new List<string>();
+
+            menuOptions.Add("New game");
+            menuOptions.Add("Load game");
+            menuOptions.Add("Quit");
+
+        here:
+            int i = MenuHelpers.VerticalSelection(menuOptions);
+
+            switch (i)
+            {
+                case 0:
                     await Videoplayer.PlayVideo(@"..\..\..\Cutscenes\videos\truck.mp4");
                     CharacterCreator.StartCharacterCreator();
                     break;

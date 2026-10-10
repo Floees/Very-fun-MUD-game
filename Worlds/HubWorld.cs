@@ -28,7 +28,7 @@ namespace MUD.Worlds
                     Console.Clear();
                     break;
                 case 1:
-                    //Forest.ForestMenu();
+                    Forest.SlimeTime(player);
                     Console.Clear();
                     break;
                 case 2:

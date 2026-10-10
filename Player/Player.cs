@@ -76,6 +76,18 @@ namespace MUD.Player
         public Enemy PlayerAttack(Player player, Enemy enemy)
         {
             //reduce enemy healt, cw how much damage the player does to the enemy
+            enemy.health -= player.playerDamage + player.playerStrength;
+            if (enemy.health <= 0)
+            {
+                Console.WriteLine($"{enemy.name} has been defeated!");
+                Thread.Sleep(3000);
+                return enemy;
+            }
+            else
+            {
+                Console.WriteLine($"{player.playerName} attacks {enemy.name} for {player.playerDamage + player.playerStrength} damage. {enemy.name} has {enemy.health} health remaining.");
+                Thread.Sleep(2000);
+            }
             return enemy;
         }
 

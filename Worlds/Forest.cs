@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MUD.Enemies;
+using MUD.Menu;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,7 +10,7 @@ namespace MUD.Worlds
     {
         private static readonly Random _rng = new Random();
 
-        public Player.Player SlimeTime(Enemies.Enemy enemy, Player.Player player)
+        public static void SlimeTime(Player.Player player)
         {
             Enemies.Enemy forestSlime = CreateForestSlime(player);
             int slimeHealthMax = forestSlime.health;
@@ -17,27 +19,29 @@ namespace MUD.Worlds
 
         Here:
             //if slime dead do something else and return player with loot and gold..
-            Console.WriteLine();
-            Console.WriteLine($"You encounter a level {forestSlime.level} Forest Slime!");
-            Console.WriteLine($"  (o_o)                        Slime health: {forestSlime.health}/{slimeHealthMax}");
-            Console.WriteLine($"  <)   )╯                      Slime damage: {slimeDamage}~");
-            Console.WriteLine("  /   \\  ");
-            Console.WriteLine();
-            player.PlayerStatWindow(player);
+            i = MenuHelpers.EnemyVerticalSelection(new List<string> { "Attack", "Flee" }, forestSlime, player);
 
 
-            switch (i) 
+            switch (i)
             {
-                case 1: player.PlayerAttack(player, forestSlime);
-                        forestSlime.EnemyAttack(forestSlime, player);
+                case 0:
+                    player.PlayerAttack(player, forestSlime);
+                    if (forestSlime.health <= 0) 
+                    {
+                        Console.Clear();
+                        Worlds.HubWorld.HubWorldMenu(player);
+                    }
+                    
+                    forestSlime.EnemyAttack(forestSlime, player);
+                    Console.Clear();
                     goto Here;
-                case 2: //flee
+                case 1: //flee
                     break;
             }
-            return player;
+            return;
         }
 
-        private Enemies.Enemy CreateForestSlime(Player.Player player)
+        public static Enemies.Enemy CreateForestSlime(Player.Player player)
         {
             var loot = new List<Enemies.Loot>
             {
@@ -47,10 +51,20 @@ namespace MUD.Worlds
 
             int slimeLevel = _rng.Next(player.playerLevel - 1, player.playerLevel + 2);
             if (slimeLevel < 1) slimeLevel = 1;
-            int slimeHealth = 10 + slimeLevel;
-            int slimeDamage = 2 + slimeLevel;
+            int slimeHealth = 15 + slimeLevel;
+            int slimeDamage = 8 + slimeLevel;
 
-            return new Enemies.Enemy("Forest Slime", slimeLevel, slimeHealth, slimeDamage, loot);
+            return new Enemies.Enemy("Forest Slime", slimeLevel, slimeHealth, slimeHealth, slimeDamage, loot);
+        }
+
+        public static void DrawSlime(Player.Player player, Enemies.Enemy forestSlime)
+        {
+            Console.WriteLine();
+            Console.WriteLine($"You encounter a level {forestSlime.level} Forest Slime!");
+            Console.WriteLine($"  (o_o)                                   Slime health: {forestSlime.health}/{forestSlime.healthMax}");
+            Console.WriteLine($"  <)   )╯                                 Slime damage: {forestSlime.damage}~");
+            Console.WriteLine("  /   \\  ");
+            Console.WriteLine();
         }
     }
 }
