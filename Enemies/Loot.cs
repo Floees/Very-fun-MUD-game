@@ -7,9 +7,9 @@ namespace MUD.Enemies
 {
     public class Loot
     {
-        string name;
-        int value;
-        int amount;
+        public string name;
+        public int value;
+        public int amount;
 
         public Loot(string name, int value, int amount)
         {

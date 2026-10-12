@@ -14,6 +14,9 @@ namespace MUD.Player
         public int playerDamage;
         public int playerArmorRating;
         public int playerGold;
+        public int CurrentXp;
+        public int XpMax;
+        public int StatPoints;
         private string? playerName;
         public bool alive;
         public List<Loot> playerLoot;
@@ -27,6 +30,9 @@ namespace MUD.Player
             playerDamage = 5;
             playerArmorRating = 5;
             playerGold = 0;
+            CurrentXp = 0;
+            XpMax = 0;
+            StatPoints = 0;
             playerLoot = new List<Loot>();
             playerName = name;
             alive = true;

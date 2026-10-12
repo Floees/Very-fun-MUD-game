@@ -25,9 +25,14 @@ namespace MUD.Worlds
             switch (i)
             {
                 case 0:
+                    
                     player.PlayerAttack(player, forestSlime);
+
                     if (forestSlime.health <= 0) 
                     {
+                        Console.Clear();
+                        forestSlime.GivePlayerLoot(player, forestSlime);
+
                         Console.Clear();
                         Worlds.HubWorld.HubWorldMenu(player);
                     }
@@ -53,8 +58,9 @@ namespace MUD.Worlds
             if (slimeLevel < 1) slimeLevel = 1;
             int slimeHealth = 15 + slimeLevel;
             int slimeDamage = 8 + slimeLevel;
+            int xp = 1 + slimeLevel;
 
-            return new Enemies.Enemy("Forest Slime", slimeLevel, slimeHealth, slimeHealth, slimeDamage, loot);
+            return new Enemies.Enemy("Forest Slime", slimeLevel, slimeHealth, slimeHealth, slimeDamage,xp, loot);
         }
 
         public static void DrawSlime(Player.Player player, Enemies.Enemy forestSlime)
