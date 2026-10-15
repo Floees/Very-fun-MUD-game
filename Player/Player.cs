@@ -28,7 +28,7 @@ namespace MUD.Player
             playerHealth = 100;
             playerStrength = 10;
             playerDamage = 5;
-            playerArmorRating = 5;
+            playerArmorRating = 0;
             playerGold = 0;
             CurrentXp = 0;
             XpMax = 10;

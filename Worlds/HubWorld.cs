@@ -36,7 +36,7 @@ namespace MUD.Worlds
                     Console.Clear();
                     break;
                 case 3:
-                    //Tavern.TavernMenu();
+                    Tavern.TavernMenu(player);
                     Console.Clear();
                     break;
                 case 4:
@@ -46,6 +46,7 @@ namespace MUD.Worlds
                 case 5:
                     //Save and quit functionality
                     Console.Clear();
+                    return;
                     goto here;
             }
         }

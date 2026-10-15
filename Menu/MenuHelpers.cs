@@ -166,5 +166,50 @@ namespace MUD.Menu
             }
 
         }
+
+        //public Player.Player GuildSellMenu(List<string> options, Player.Player player)
+        //{
+        //    Console.WriteLine();
+
+        //    int maxLength = 0;
+
+        //    foreach (var stat in options)
+        //    {
+        //        if (stat.Length > maxLength)
+        //        {
+        //            maxLength = stat.Length;
+        //        }
+        //    }
+        //    // 1. Calculate the required width based on text length plus padding
+        //    int totalWidth = maxLength + 4; // 2 spaces for padding + 2 characters for borders
+
+        //    // 2. Draw the top border (e.g., ┌────────┐)
+        //    Console.WriteLine("┌" + new string('─', totalWidth - 2) + "┐");
+
+        //    // 3. Draw the middle text row (e.g., │ Your Text │)
+        //    int i = 0;
+        //    int hovering = 0;
+        //    int hoveringUpperBound = 0;
+        //    hoveringUpperBound = options.Count - 1;
+
+        //    foreach (var stat in options)
+        //    {
+        //        if(hovering == i) 
+        //        {
+        //            Console.WriteLine($"│ {Console.ForegroundColor = ConsoleColor.Blue}{options[i].PadRight(maxLength)}{Console.ForegroundColor = ConsoleColor.White} │");
+        //            i++;
+        //            continue;
+        //        }
+        //        Console.WriteLine($"│ {options[i].PadRight(maxLength)} │");
+        //        i++;
+        //    }
+        //    // 4. Draw the bottom border (e.g., └────────┘)
+        //    Console.WriteLine("└" + new string('─', totalWidth - 2) + "┘");
+
+        //    switch () 
+        //    {
+                
+        //    }
+        //}
     }
 }
