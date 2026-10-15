@@ -28,7 +28,7 @@ namespace MUD.Enemies
 
         public Player.Player EnemyAttack(Enemy enemy, Player.Player player)
         {
-            player.playerHealth -= enemy.damage + enemy.level;
+            player.playerHealth -= enemy.damage + enemy.level; // do something with armorrating
 
             if (player.playerHealth <= 0)
             {

@@ -31,7 +31,7 @@ namespace MUD.Player
             playerArmorRating = 5;
             playerGold = 0;
             CurrentXp = 0;
-            XpMax = 0;
+            XpMax = 10;
             StatPoints = 0;
             playerLoot = new List<Loot>();
             playerName = name;
@@ -82,7 +82,7 @@ namespace MUD.Player
         public Enemy PlayerAttack(Player player, Enemy enemy)
         {
             //reduce enemy healt, cw how much damage the player does to the enemy
-            enemy.health -= player.playerDamage + player.playerStrength;
+            enemy.health -= Program._rng.Next(player.playerDamage + player.playerStrength - enemy.level, player.playerDamage + player.playerStrength);
             if (enemy.health <= 0)
             {
                 Console.WriteLine($"{enemy.name} has been defeated!");

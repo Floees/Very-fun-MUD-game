@@ -8,8 +8,6 @@ namespace MUD.Worlds
 {
     internal class Forest
     {
-        private static readonly Random _rng = new Random();
-
         public static void SlimeTime(Player.Player player)
         {
             Enemies.Enemy forestSlime = CreateForestSlime(player);
@@ -51,10 +49,10 @@ namespace MUD.Worlds
             var loot = new List<Enemies.Loot>
             {
                 new Enemies.Loot("Slime Gel", 5, 1),
-                new Enemies.Loot("Mushroom", 3, _rng.Next(0, 3))
+                new Enemies.Loot("Mushroom", 3, Program._rng.Next(0, 3))
             };
 
-            int slimeLevel = _rng.Next(player.playerLevel - 1, player.playerLevel + 2);
+            int slimeLevel = Program._rng.Next(player.playerLevel - 1, player.playerLevel + 2);
             if (slimeLevel < 1) slimeLevel = 1;
             int slimeHealth = 15 + slimeLevel;
             int slimeDamage = 8 + slimeLevel;
